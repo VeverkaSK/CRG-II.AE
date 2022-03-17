@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-char hraciepole[3][3] = { {'1','2','3'},{'4','5','6'},{'7','8','9'} };
+char hraciepolecisla[3][3] = { {'1','2','3'},{'4','5','6'},{'7','8','9'} };
 int riadok, stlpec, volba, volba2;
 char tah = 'X';
 bool remiza = false;
@@ -11,13 +11,13 @@ void hracie_pole() {
     cout << "  Hrac X | Hrac O\n";
     cout << "===================\n";
     cout << "|     |     |     |\n";
-    cout << "|  " << hraciepole[0][0] << "  |  " << hraciepole[0][1] << "  |  " << hraciepole[0][2] << "  |\n";
+    cout << "|  " << hraciepolecisla[0][0] << "  |  " << hraciepolecisla[0][1] << "  |  " << hraciepolecisla[0][2] << "  |\n";
     cout << "|_____|_____|_____|\n";
     cout << "|     |     |     |\n";
-    cout << "|  " << hraciepole[1][0] << "  |  " << hraciepole[1][1] << "  |  " << hraciepole[1][2] << "  |\n";
+    cout << "|  " << hraciepolecisla[1][0] << "  |  " << hraciepolecisla[1][1] << "  |  " << hraciepolecisla[1][2] << "  |\n";
     cout << "|_____|_____|_____|\n";
     cout << "|     |     |     |\n";
-    cout << "|  " << hraciepole[2][0] << "  |  " << hraciepole[2][1] << "  |  " << hraciepole[2][2] << "  |\n";
+    cout << "|  " << hraciepolecisla[2][0] << "  |  " << hraciepolecisla[2][1] << "  |  " << hraciepolecisla[2][2] << "  |\n";
     cout << "|     |     |     |\n";
     cout << "===================\n";
 }
@@ -32,25 +32,52 @@ void tah_hraca() {
     cin >> volba;
 
     switch (volba) {
-    case 1: riadok = 0; stlpec = 0; break;
-    case 2: riadok = 0; stlpec = 1; break;
-    case 3: riadok = 0; stlpec = 2; break;
-    case 4: riadok = 1; stlpec = 0; break;
-    case 5: riadok = 1; stlpec = 1; break;
-    case 6: riadok = 1; stlpec = 2; break;
-    case 7: riadok = 2; stlpec = 0; break;
-    case 8: riadok = 2; stlpec = 1; break;
-    case 9: riadok = 2; stlpec = 2; break;
+    case 1: 
+        riadok = 0;
+        stlpec = 0;
+        break;
+    case 2: 
+        riadok = 0;
+        stlpec = 1;
+        break;
+    case 3: 
+        riadok = 0; 
+        stlpec = 2;
+        break;
+    case 4: 
+        riadok = 1;
+        stlpec = 0;
+        break;
+    case 5: 
+        riadok = 1;
+        stlpec = 1;
+        break;
+    case 6: 
+        riadok = 1;
+        stlpec = 2;
+        break;
+    case 7: 
+        riadok = 2;
+        stlpec = 0;
+        break;
+    case 8: 
+        riadok = 2;
+        stlpec = 1;
+        break;
+    case 9: 
+        riadok = 2;
+        stlpec = 2;
+        break;
     default:
         cout << "Neplatna volba\n";
     }
 
-    if (tah == 'X' && hraciepole[riadok][stlpec] != 'X' && hraciepole[riadok][stlpec] != 'O') {
-        hraciepole[riadok][stlpec] = 'X';
+    if (tah == 'X' && hraciepolecisla[riadok][stlpec] != 'X' && hraciepolecisla[riadok][stlpec] != 'O') {
+        hraciepolecisla[riadok][stlpec] = 'X';
         tah = 'O';
     }
-    else if (tah == 'O' && hraciepole[riadok][stlpec] != 'X' && hraciepole[riadok][stlpec] != 'O') {
-        hraciepole[riadok][stlpec] = 'O';
+    else if (tah == 'O' && hraciepolecisla[riadok][stlpec] != 'X' && hraciepolecisla[riadok][stlpec] != 'O') {
+        hraciepolecisla[riadok][stlpec] = 'O';
         tah = 'X';
     }
     else {
@@ -63,15 +90,15 @@ void tah_hraca() {
 
 bool koniec_hry() {
     for (int i = 0; i < 3; i++)
-        if (hraciepole[i][0] == hraciepole[i][1] && hraciepole[i][0] == hraciepole[i][2] || hraciepole[0][i] == hraciepole[1][i] && hraciepole[0][i] == hraciepole[2][i])
+        if (hraciepolecisla[i][0] == hraciepolecisla[i][1] && hraciepolecisla[i][0] == hraciepolecisla[i][2] || hraciepolecisla[0][i] == hraciepolecisla[1][i] && hraciepolecisla[0][i] == hraciepolecisla[2][i])
             return false;
 
-    if (hraciepole[0][0] == hraciepole[1][1] && hraciepole[0][0] == hraciepole[2][2] || hraciepole[0][2] == hraciepole[1][1] && hraciepole[0][2] == hraciepole[2][0])
+    if (hraciepolecisla[0][0] == hraciepolecisla[1][1] && hraciepolecisla[0][0] == hraciepolecisla[2][2] || hraciepolecisla[0][2] == hraciepolecisla[1][1] && hraciepolecisla[0][2] == hraciepolecisla[2][0])
         return false;
 
     for (int i = 0; i < 3; i++)
         for (int j = 0; j < 3; j++)
-            if (hraciepole[i][j] != 'X' && hraciepole[i][j] != 'O')
+            if (hraciepolecisla[i][j] != 'X' && hraciepolecisla[i][j] != 'O')
                 return true;
 
     remiza = true;
