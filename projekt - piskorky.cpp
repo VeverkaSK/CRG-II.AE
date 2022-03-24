@@ -2,35 +2,44 @@
 #include <iostream>
 using namespace std;
 
-char hraciepolecisla[3][3] = { {'1','2','3'},{'4','5','6'},{'7','8','9'} };
+char hraciepolecisla[3][3] = { {'1','2','3'}, {'4','5','6'}, {'7','8','9'} };
 int riadok, stlpec, volba, volba2;
 char tah = 'X';
 bool remiza = false;
 
 void hracie_pole() {
-    cout << "  Hrac X | Hrac O\n";
-    cout << "===================\n";
-    cout << "|     |     |     |\n";
-    cout << "|  " << hraciepolecisla[0][0] << "  |  " << hraciepolecisla[0][1] << "  |  " << hraciepolecisla[0][2] << "  |\n";
-    cout << "|_____|_____|_____|\n";
-    cout << "|     |     |     |\n";
-    cout << "|  " << hraciepolecisla[1][0] << "  |  " << hraciepolecisla[1][1] << "  |  " << hraciepolecisla[1][2] << "  |\n";
-    cout << "|_____|_____|_____|\n";
-    cout << "|     |     |     |\n";
-    cout << "|  " << hraciepolecisla[2][0] << "  |  " << hraciepolecisla[2][1] << "  |  " << hraciepolecisla[2][2] << "  |\n";
-    cout << "|     |     |     |\n";
-    cout << "===================\n";
+    cout << "+---------------------------+\n";
+    cout << "|         Piskorky          |\n";
+    cout << "|      Hrac X | Hrac O      |\n";
+    cout << "|     _____ _____ _____     |\n";
+    cout << "|    |     |     |     |    |\n";
+    cout << "|    |  " << hraciepolecisla[0][0] << "  |  " << hraciepolecisla[0][1] << "  |  " << hraciepolecisla[0][2] << "  |    |\n";
+    cout << "|    |_____|_____|_____|    |\n";
+    cout << "|    |     |     |     |    |\n";
+    cout << "|    |  " << hraciepolecisla[1][0] << "  |  " << hraciepolecisla[1][1] << "  |  " << hraciepolecisla[1][2] << "  |    |\n";
+    cout << "|    |_____|_____|_____|    |\n";
+    cout << "|    |     |     |     |    |\n";
+    cout << "|    |  " << hraciepolecisla[2][0] << "  |  " << hraciepolecisla[2][1] << "  |  " << hraciepolecisla[2][2] << "  |    |\n";
+    cout << "|    !_____!_____!_____!    |\n";
+    cout << "|                           |\n";
+    cout << "+---------------------------+\n";
 }
 
 void tah_hraca() {
     if (tah == 'X') {
-        cout << "\nHrac 1 [X]: ";
+        cout << "|                           |\n";
+        cout << "| Hrac 2 [X]  (Hodnota 1-9) |\n";
+        cout << "|                           |\n";
+        cout << "+---------------------------+\n";
     }
     else if (tah == 'O') {
-        cout << "\nHrac 2 [O]: ";
+        cout << "|                           |\n";
+        cout << "| Hrac 2 [O]  (Hodnota 1-9) |\n";
+        cout << "|                           |\n";
+        cout << "+---------------------------+\n";
     }
     cin >> volba;
-
+    
     switch (volba) {
     case 1: 
         riadok = 0;
@@ -81,7 +90,10 @@ void tah_hraca() {
         tah = 'X';
     }
     else {
-        cout << "Pole je vyplnene vyber si ine: \n";
+        cout << "+---------------------------+\n";
+        cout << "|      Pole je vyplnene     |\n";
+        cout << "|       vyber si ine        |\n";
+        cout << "+---------------------------+\n";
         tah_hraca();
     }
     hracie_pole();
@@ -107,19 +119,26 @@ bool koniec_hry() {
 
 int main()
 {
-    cout << "      PISKORKY\n";
     while (koniec_hry()) {
         hracie_pole();
         tah_hraca();
         koniec_hry();
     }
     if (tah == 'X' && remiza == false) {
-        cout << "Gratulujem hrac O vyhral!\n";
+        cout << "+---------------------------+\n";
+        cout << "|        Gratulujem,        |\n";
+        cout << "|       hrac 0 vyhral!      |\n";
+        cout << "+---------------------------+\n";
     }
     else if (tah == 'O' && remiza == false) {
-        cout << "Gratulujem hrac X vyhral!\n";
+        cout << "+---------------------------+\n";
+        cout << "|        Gratulujem,        |\n";
+        cout << "|       hrac 0 vyhral!      |\n";
+        cout << "+---------------------------+\n";
     }
     else
-        cout << "Remiza!\n";
+        cout << "+---------------------------+\n";
+        cout << "|           Remiza          |\n";
+        cout << "+---------------------------+\n";
     return 0;
 }
