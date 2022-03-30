@@ -1,4 +1,4 @@
-﻿//Samuel Poláèek 2022
+//Samuel Polacek 2022
 #include <iostream>
 using namespace std;
 
@@ -102,18 +102,19 @@ int main()
     if (tah == 'X' && remiza == false) {
         cout << "+---------------------------+\n";
         cout << "|        Gratulujem,        |\n";
-        cout << "|       hrac X vyhral!      |\n";
+        cout << "|       hrac O vyhral!      |\n";
         cout << "+---------------------------+\n";
     }
     else if (tah == 'O' && remiza == false) {
         cout << "+---------------------------+\n";
         cout << "|        Gratulujem,        |\n";
-        cout << "|       hrac 0 vyhral!      |\n";
+        cout << "|       hrac X vyhral!      |\n";
         cout << "+---------------------------+\n";
     }
-    else
-    cout << "+---------------------------+\n";
-    cout << "|           Remiza          |\n";
-    cout << "+---------------------------+\n";
+    else if (remiza == true) {
+        cout << "+---------------------------+\n";
+        cout << "|           Remiza          |\n";
+        cout << "+---------------------------+\n";
+    }
     return 0;
 }
