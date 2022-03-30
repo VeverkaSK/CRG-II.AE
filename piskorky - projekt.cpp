@@ -51,7 +51,9 @@ void tah_hraca() {
     case 8: riadok = 2; stlpec = 1; break;
     case 9: riadok = 2; stlpec = 2; break;
     default:
-        cout << "Neplatna volba\n";
+        cout << "+---------------------------+\n";
+        cout << "|       Neplatna volba      |\n";
+        cout << "+---------------------------+\n";
     }
 
     if (tah == 'X' && hraciepolecisla[riadok][stlpec] != 'X' && hraciepolecisla[riadok][stlpec] != 'O') {
@@ -100,7 +102,7 @@ int main()
     if (tah == 'X' && remiza == false) {
         cout << "+---------------------------+\n";
         cout << "|        Gratulujem,        |\n";
-        cout << "|       hrac 0 vyhral!      |\n";
+        cout << "|       hrac X vyhral!      |\n";
         cout << "+---------------------------+\n";
     }
     else if (tah == 'O' && remiza == false) {
@@ -110,7 +112,7 @@ int main()
         cout << "+---------------------------+\n";
     }
     else
-        cout << "+---------------------------+\n";
+    cout << "+---------------------------+\n";
     cout << "|           Remiza          |\n";
     cout << "+---------------------------+\n";
     return 0;
